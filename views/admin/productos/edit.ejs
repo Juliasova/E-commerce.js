@@ -1,0 +1,28 @@
+<h1>Editar producto</h1>
+<div class="row justify-content-center">
+    <div class="col-6">
+        <form action="/admin/productos/update?_method=PUT" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%= producto.id %>">
+            <div>
+                <label for="nombre" class="form-label">Nombre: </label>
+                <input type="text" id="nombre" class="form-control" name="nombre" value="<%= producto.nombre %>">
+            </div>
+            <div>
+                <label for="imagen" class="form-label">Imagen: </label>
+                <input type="file" id="imagen" class="form-control" name="imagen">
+                <img width="100" src="/uploads/producto_<%= producto.id %>.jpg" alt="<%= producto.nombre %>">
+            </div>
+            <div>
+                <label for="categoria" class="form-label">Categoria: </label>
+                <select name="categoria" id="categoria"  class="form-control">
+                    <option value=""></option>
+                    <option value="1" <%= producto.categoria_id == 1 ? 'selected' : '' %>>Categoria 1</option>
+                    <option value="2" <%= producto.categoria_id == 2 ? 'selected' : '' %>>Categoria 2</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary my-2">Guardar</button>
+        
+        </form>
+    </div>
+</div>
+
