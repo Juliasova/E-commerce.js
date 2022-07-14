@@ -31,8 +31,8 @@ app.use(express.static(__dirname+'/public'));
 
 app.use(express.urlencoded({extended:false}));
 
-// app.use(cors());
-// app.use(express.json());
+app.use(cors());
+app.use(express.json());
 
 app.use(methodOverride('_method'));
 
@@ -45,6 +45,7 @@ app.use(require('./routes/admin/productos'));
 app.use(require('./routes/admin/categorias'));
 
 app.use(require('./routes/api/categorias'));
+app.use(require('./routes/api/auth'));
 
 app.use(require('./routes/auth'));
 

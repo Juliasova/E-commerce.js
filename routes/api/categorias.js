@@ -1,16 +1,16 @@
 const express = require('express');
-const { route } = require('express/lib/application');
+//const { route } = require('express/lib/application');
 const router=express.Router();
 
 const controller=require('../../controllers/api/categorias');
 
-router.get('/admin/categorias',controller.index);
+router.get('/api/categorias',controller.index);
 
-router.post('/admin/categorias/store',controller.store);
-router.get('/admin/categorias/:id',controller.show);  
+router.post('/api/categorias',controller.store);
+router.get('/api/categorias/:id',controller.show);  
 
-router.put('/admin/categorias/update',controller.update);
+router.put('/api/categorias',controller.update);
 
-router.delete('/admin/categorias/:id/delete',controller.delete);
+router.delete('/api/categorias/:id',controller.delete);
 
 module.exports  =router;
